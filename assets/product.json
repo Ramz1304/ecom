@@ -1,0 +1,89 @@
+[
+  { 
+    "brandId": "Lenin",
+    "category": "Clothing",
+    "clientSkuId": "190496015203",
+    "color": "yellow",
+    "imageUrl": "/assets/img4.jpg",
+    "mrp": 2000,
+    "name": "Lenin T-Shirt",
+    "size": "XS",
+    "styleId": "1297125001"
+  },
+  {
+    "brandId": "Nike",
+    "category": "Clothing",
+    "clientSkuId": "190496015205",
+    "color": "Black",
+    "imageUrl": "/assets/img1.jpg",
+    "mrp": 2500,
+    "name": "Nike T-Shirt",
+    "size": "L",
+    "styleId": "1297125002"
+  },
+  {
+    "brandId": "Addidas",
+    "category": "Clothing",
+    "clientSkuId": "190496015204",
+    "color": "Red",
+    "imageUrl": "/assets/img2.jpg",
+    "mrp": 3000,
+    "name": "Addidas T-Shirt",
+    "size": "L",
+    "styleId": "1297125003"
+  },
+  {
+    "brandId": "Zaraman",
+    "category": "Clothing",
+    "clientSkuId": "190496015205",
+    "color": "White",
+    "imageUrl": "/assets/img3.jpg",
+    "mrp": 500,
+    "name": "Zaraman T-Shirt",
+    "size": "XS",
+    "styleId": "1297125004"
+  },
+  {
+    "brandId": "Fly",
+    "category": "Clothing",
+    "clientSkuId": "190496015205",
+    "color": "Yellow",
+    "imageUrl": "/assets/img4.jpg",
+    "mrp": 499,
+    "name": "Fly",
+    "size": "L",
+    "styleId": "1297125005"
+  },{
+    "brandId": "Levi",
+    "category": "Clothing",
+    "clientSkuId": "190496015203",
+    "color": "Red",
+    "imageUrl": "/assets/img2.jpg",
+    "mrp": 2999,
+    "name": "Levi's T-Shirt",
+    "size": "XS",
+    "styleId": "1297125006"
+  },
+  {
+    "brandId": "Craft",
+    "category": "Clothing",
+    "clientSkuId": "190496015205",
+    "color": "Grey",
+    "imageUrl": "/assets/img1.jpg",
+    "mrp": 1499,
+    "name": "Craft T-Shirt",
+    "size": "M",
+    "styleId": "1297125007"
+  },
+  {
+    "brandId": "Tommy Hilfigure",
+    "category": "Clothing",
+    "clientSkuId": "190496015206",
+    "color": "Yellow",
+    "imageUrl": "/assets/img4.jpg",
+    "mrp": 799,
+    "name": "TH T-Shirt",
+    "size": "XL",
+    "styleId": "1297125008"
+  }
+]
