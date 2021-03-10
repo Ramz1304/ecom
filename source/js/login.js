@@ -44,10 +44,23 @@ function login(event) {
 
 }
 
+function session(){
+    let user = localStorage.getItem('user');
+    if(user){
+    location.href = '/source/home.html';
+    }
+    else{
+        $('body').removeClass('d-none');
+    }
+}
+
+
 
 $(document).ready(
 
     function () {
+
+        session();
 
         $('#showpassword').click(passwordhide);
 

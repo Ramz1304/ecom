@@ -119,17 +119,18 @@ function removelogdata(){
 
 //Security
 function usersecurity(){
+    let user = localStorage.getItem('user');
     if (window.location.pathname == '/index.html') {
         return;
-    }
-    let user = localStorage.getItem('user');
+        }
+    
     if(!user){
         let notification = "Please log in";
-        localStorage.setItem('notification',(notification));//change
+        localStorage.setItem('notification',(notification));
         location.href = '/index.html';
     }
     else{
-        $('body').removeClass('d-none');   
+        $('body').removeClass('d-none');
     }
 
 } 
