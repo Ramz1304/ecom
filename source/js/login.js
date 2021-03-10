@@ -1,68 +1,71 @@
-    //login method
+//login method
 
-    var user_data = '';
+var user_data = '';
 
-    function getUser(){
-        $.ajax({
-            type: "Get",
-            url: "/assets/user.json",
-            dataType: "json",
-            success: function(data) {
-                user_data = data;
-        
-            },
-            error: function(){
-                alert("json not found");
-            }
-        });
-        
+function getUser(){
+    $.ajax({
+    type: "Get",
+    url: "/assets/user.json",
+    dataType: "json",
+    success: function(data) {
+        user_data = data;
+
+    },
+    error: function(){
+        alert("json not found");
+    }
+    });
+
+}
+
+
+
+
+function login(event) {
+    let data = JSON.parse(toJson($('#loginform')));
+    let logname;
+    for(i=0;i< user_data.length;i++){
+        if(data.email == user_data[i].email && data.password == user_data[i].password){
+        logname = user_data[i].name
+        let obj = {
+            "name": logname,
+            "email": data.email,
+            "password": data.password
+        };
+        localStorage.setItem('user', JSON.stringify(obj));
+        location.href = '/source/home.html'; 
+        return false; 
+        }
+
     }
 
+    let message = "Enter Correct User details";
+    toast(message);
+
+}
 
 
+$(document).ready(
 
-    function login() {
-        
-        let email = $("#email").val();
-        let password = $("#password").val();
-        let logname;
-        for(i=0;i< user_data.length;i++){
-            if(email == user_data[i].email && password == user_data[i].password){
-                logname = user_data[i].name
-                let obj = {
-                    "name": logname,
-                    "email": email,
-                    "password": password
-                };
-                localStorage.setItem('user', JSON.stringify(obj));
-                location.href = '/source/home.html';
-                return;  
-            }
-            let message = "Enter Correct User details";
-            toast(message);
+    function () {
+
+        $('#showpassword').click(passwordhide);
+
+        validation();
+
+        getUser();
+
+        $('#loginform').submit(login);
+
+        let message = localStorage.getItem('notification');
+        if(!message){
+            return;
+        }
+        else{
+        toast(message);
+        localStorage.removeItem('notification');
         }
         
     }
 
-// form submit
-// toast verify during security check
-
-
-
-    $(document).ready(
-
-        function () {
-    
-            $('#showpassword').click(passwordhide);
-            
-            validation();
-        
-            getUser();
-        
-            refresh();
-        
-            $('#login').click(login);
-            
-        }
-
-    );
+);

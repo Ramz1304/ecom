@@ -1,12 +1,11 @@
-//product method
-function getProduct(){
+//Home product method
+function LoadProduct(){
     $.ajax({
         type: "Get",
         url: "/assets/product.json",
         dataType: "json",
         success: function(data) {
             setProduct(data);
-            product_data = data;
             let message="products loaded"
             toast(message);
         },
@@ -18,8 +17,6 @@ function getProduct(){
     
 }
 
-
-
 function setProduct(data){
     let $probody = $("#productbox").find('#productbody');
     $probody.empty();
@@ -28,12 +25,16 @@ function setProduct(data){
         let id = e.styleId;
         let cell =  $('<div/>',{ class : "col-lg-3 col-md-4 col-sm-6 mb-4"}).append([
             $('<div/>',{ class : "card mb-4 shadow-sm"}).append([
-            $('<img/>',{ class : "card-img-top shadow-sm", id : id, src : e.imageUrl, onClick : 'View(id)' , alt  : 'Image not Available'}),
+                $('<a/>',{href : '/source/product.html?id='+id}).append([
+            $('<img/>',{ class : "card-img-top shadow-sm", src : e.imageUrl, alt  : 'Image not Available'}),
+                ]),
             $('<div/>',{ class : "card-body text-center"}).append([
-                $('<h5/>',{ class : "mb-3"}).text(e.name),
+                $('<a/>',{href : '/source/product.html?id='+id}).append([
+                    $('<h5/>',{ class : "mb-3"}).text(e.name)
+                ]),
                 $('<p/>').text("Price : "+e.mrp),
                 $('<p/>').text("Size : "+e.size),
-                $('<p/>',{ class : "d-flex justify-content-center"}).text("Quantity : ").append([
+                $('<p/>',{ class : "d-flex justify-content-center align-items-center"}).text("Quantity : ").append([
                     $('<button/>',{ id : id , type :'button', class: 'btn', onClick : 'minus(id)' }).append([
                         $('<i/>',{class : "fa fa-minus text-danger"})
                     ]),
@@ -59,10 +60,8 @@ function setProduct(data){
 $(document).ready(
 
     function (){
-
-        localStorage.removeItem('productdata');
     
-        getProduct();
+        LoadProduct();
 
         logdata();
     

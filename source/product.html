@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/source/css/app.css">
     </head>
 
-    <body>
+    <body class="d-none">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: blue;">
         <img src="/assets/logo.png" width="150" height="30" alt="">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,18 +24,17 @@
         
         
             <ul class="navbar-nav ml-auto">
+                <li class="navbar-text" style="color: white;">
+                    <span id="logname"></span>
+                </li>
             <li class="nav-item active">
                 <a class="nav-link" id="ho" href="/source/home.html">Home <i class="fa fa-home" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item active">
             <a class="nav-link mr-1" id="ca" href="/source/cart.html">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </li>
-            <li class="navbar-text" style="color: white;">
-                <span id="logname"></span>
-                &nbsp;&gt;&nbsp;
-            </li>
             <li class="nav-item active">
-                <a class="nav-link" id="logout" href="/index.html">Logout</a>
+                <a class="nav-link" id="logout" href="/index.html">Logout <i class="fa fa-power-off" aria-hidden="true"></i></a>
             </li>
             
         </ul>
@@ -48,7 +47,7 @@
             <div class="row mt-5" id="productbox">
                 <div class="col-md-7 mt-5 mx-auto">
                     <div class="card mt-5 shadow-lg" id ="productdata">
-                        
+                        <div><h2>all product details</h2></div>
                     </div>
 
                 </div>

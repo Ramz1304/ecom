@@ -19,8 +19,6 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         
       </div>
     </div>
@@ -28,8 +26,8 @@
   <main>
   <div class="container-fluid" >
     <div class="row">
-      <div class="d-none d-md-block col-md-7 mt-5 mx-auto">
-        <div id="carouselExampleInterval" class="carousel slide mt-3"  data-ride="carousel">
+      <div class="d-none d-md-none d-lg-block mt-5 mx-auto">
+        <div id="carouselExampleInterval" style="width: 600px;" class="carousel slide mt-3"  data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="10000">
               <img src="/assets/img1.jpg" class="d-block" width="600px" height="600px" alt="/assets/no-image.png">
@@ -52,17 +50,17 @@
         </div>
       </div>
         <div class="col col-sm-6 col-md-4 col-lg-3 mx-auto">
-            <div class="card border-0 shadow-lg" style="margin-top: 100px;">
+            <div class="card border-0 rounded shadow-lg" style="margin-top: 100px;">
                 <div class="card-header border-bottom border-primary text-center">
                     Enter Login Details
                 </div>
                 <div class="card-body border-0">  
-                  <form class="form" novalidate>
+                  <form class="form" id="loginform" novalidate>
                     
 
-                    <div class="form-group" id="form">
+                    <div class="form-group">
                       <label for="inputEmail">Email</label>
-                      <input type="email" class="form-control" id="email" placeholder="Email" required>
+                      <input type="email" class="form-control border-primary rounded-pill" id="email" name="email" placeholder="Email" required>
                       <div class="invalid-feedback">
                         Please enter Email
                       </div>
@@ -71,7 +69,7 @@
                     <div class="form-group">
                       <label for="password">Password</label>
                       
-                          <input type="password" class="form-control"  id="password"
+                          <input type="password" class="form-control border-primary rounded-pill" name="password" id="password"
                                 placeholder="Password" autocomplete="off" required>
                                 <div class="invalid-feedback">
                                   Please enter Password
@@ -83,7 +81,7 @@
                   </div>
                   <br>   
                   <div class="col-md-10 text-center">
-                    <button type="button" class="btn ml-5 text-white" style="background-color: blue;" id="login">Log in</button>
+                    <button type="submit" class="btn ml-5 text-white" style="background-color: blue;">Log in</button>
                 </div>
                   </form>
                 </div>

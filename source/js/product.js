@@ -1,12 +1,14 @@
+//Product page loader
+function Product(data){
+    let baseUrl = (window.location).href; 
+    let pageid = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
 
-$(document).ready(
-
-function (){
-
-    let obj = JSON.parse(localStorage.getItem('productdata'));
     let $probody = $('#productbox').find('#productdata');
-    let id = obj.styleId;
     $probody.empty(); 
+    for(let i in data){ 
+        if( pageid == Number(data[i].styleId)) { 
+    let obj = data[i];
+    let id = parseInt(obj.styleId);
     let cell =$('<div/>',{ class : 'row no-gutters'}).append([ 
         $('<div/>',{ class : "col-md-5"}).append([
         $('<img/>',{ class : "card-img shadow-sm", src : obj.imageUrl , alt  : 'Image not Available'})
@@ -19,7 +21,7 @@ function (){
             $('<p/>').text("Size : "+obj.size),
             $('<p/>').text("Color : "+obj.color),
             $('<p/>').text("Price : "+obj.mrp),
-            $('<p/>',{ class : "d-flex"}).text("Quantity : ").append([
+            $('<p/>',{ class : "d-flex align-items-center"}).text("Quantity : ").append([
                 $('<button/>',{ id : id, type :'button', class: 'btn', onClick : 'minus(id)'}).append([
                     $('<i/>',{class : "fa fa-minus text-danger"})
                 ]),
@@ -36,10 +38,37 @@ function (){
     ]),
         ]),
     
-    ]); 
-            $probody.append(cell);
-
-            logdata();
+    ]);
+    $probody.append(cell);
+    return false;
+} 
 }
+
+}
+//ajax execution
+function LoadProduct(){
+    $.ajax({
+        type: "Get",
+        url: "/assets/product.json",
+        dataType: "json",
+        success: function(data) {
+            Product(data);
+        },
+        error: function(){
+            let message="product not found"
+            toast(message);
+        }
+    });
+    
+}
+
+
+$(document).ready(
+
+    function (){
+
+        LoadProduct();
+    
+    }
 
 )
