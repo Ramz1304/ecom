@@ -8,7 +8,7 @@ function Product(data){
     for(let i in data){ 
         if( pageid == Number(data[i].styleId)) { 
     let obj = data[i];
-    let id = parseInt(obj.styleId);
+    let id = Number(obj.styleId);
     let cell =$('<div/>',{ class : 'row no-gutters'}).append([ 
         $('<div/>',{ class : "col-md-5"}).append([
         $('<img/>',{ class : "card-img shadow-sm", src : obj.imageUrl , alt  : 'Image not Available'})

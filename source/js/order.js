@@ -34,7 +34,7 @@ function readcsv() {
 //Update Name
 function updateFileName() {
   let file = $('#upload');
-  let fileName = file.val().replace('C:\\fakepath\\', " "); // url check
+  let fileName = file.val().replace('C:\\fakepath\\', " "); 
   $('#uploadname').html(fileName);
 }
 

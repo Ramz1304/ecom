@@ -30,7 +30,7 @@ function getProduct(){
 //Add product
 function Add(id){
     for(let i in product_data){ 
-            if( id == parseInt(product_data[i].styleId)) { 
+            if( id == Number(product_data[i].styleId)) { 
                 let totalprice = $('#qty'+id).val() * product_data[i].mrp;
                 let obj ={
                         "styleId": product_data[i].styleId,
@@ -51,8 +51,8 @@ function Add(id){
                         proincart =JSON.parse(localStorage.getItem('product')); 
                         let temp = proincart.find(e => e.styleId === obj.styleId)
                         if (temp != undefined) { 
-                            let oldQuantity = parseInt(temp.Quantity);
-                            let newQuantity = parseInt(obj.Quantity);
+                            let oldQuantity = Number(temp.Quantity);
+                            let newQuantity = Number(obj.Quantity);
                             temp.Quantity = newQuantity + oldQuantity;
                             temp.price = temp.Quantity * temp.mrp;
                         } else {

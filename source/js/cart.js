@@ -43,7 +43,7 @@ function grandtotal(){
     $total.empty();
     for(let i in cartProduct) {
         let f = cartProduct[i];
-        let value = parseInt(f.price);
+        let value = Number(f.price);
         total += value;
         
         } 
