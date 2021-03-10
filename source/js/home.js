@@ -6,8 +6,6 @@ function LoadProduct(){
         dataType: "json",
         success: function(data) {
             setProduct(data);
-            let message="products loaded"
-            toast(message);
         },
         error: function(){
             let message="product not found"
